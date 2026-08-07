@@ -18,12 +18,18 @@ ollama pull llama3.2:1b
 
 ## Usage
 
+**Command line:**
 ```bash
 # Encrypt and index everything in sample_docs/
 python main.py ingest
 
 # Ask a question
 python main.py ask "How many remote work days are employees allowed?"
+```
+
+**Or via a simple web UI:**
+```bash
+streamlit run streamlit_app.py
 ```
 
 ## How it works
@@ -42,10 +48,15 @@ python main.py ask "How many remote work days are employees allowed?"
 
 - Key management uses a local keyfile (`.vault.key`, gitignored) — appropriate
   for a demo project, not a claim of production-grade key management.
-- The guardrail is a heuristic first pass, not a full AI-safety evaluation
-  system.
+- The guardrail is a heuristic first pass (a phrase check plus a distance
+  threshold), not a full AI-safety evaluation system.
+- Re-running `ingest` on the same documents currently appends new chunks
+  rather than skipping duplicates. Clear `chroma_store/` and
+  `encrypted_chunks.db` before re-ingesting the same files to avoid
+  duplicate entries.
 
 ## Next steps (optional)
 
+- Make `ingest` idempotent — skip or replace chunks for documents already indexed.
 - Wrap `ingest`/`ask` in a FastAPI app for a proper `/ingest` and `/query` API.
 - Swap the confidence threshold guardrail for a RAGAS-based groundedness score.
