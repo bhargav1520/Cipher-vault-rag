@@ -1,0 +1,41 @@
+CS 402: Introduction to Machine Learning
+Fall Semester Syllabus
+
+Course Description
+This course covers the fundamentals of machine learning, including
+supervised and unsupervised learning, model evaluation, and an
+introduction to neural networks. Students will implement algorithms
+from scratch before using standard libraries, to build intuition for
+what's happening under the hood.
+
+Prerequisites
+Students must have completed Data Structures and Algorithms, and
+Linear Algebra. Familiarity with Python is required; prior exposure to
+NumPy is recommended but not mandatory, as the first two weeks include
+a NumPy refresher.
+
+Grading Breakdown
+Assignments (4 total): 40% of final grade
+Midterm exam: 20% of final grade
+Final project: 30% of final grade
+Class participation: 10% of final grade
+
+Late submissions are penalized 10% per day, up to a maximum of three
+days late, after which the assignment receives a zero unless a prior
+extension was approved.
+
+Weekly Schedule
+Week 1-2: Python and NumPy refresher, linear regression from scratch
+Week 3-4: Logistic regression, gradient descent, regularization
+Week 5-6: Decision trees, random forests, ensemble methods
+Week 7: Midterm exam
+Week 8-9: Unsupervised learning, k-means, PCA
+Week 10-12: Neural network fundamentals, backpropagation
+Week 13-14: Final project work sessions and presentations
+
+Academic Integrity
+All assignments must be completed individually unless explicitly
+stated as a group project. Code found to be substantially copied from
+another student or an online source without attribution will result in
+a zero for that assignment and a report to the academic integrity
+office.

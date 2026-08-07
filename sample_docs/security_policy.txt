@@ -1,0 +1,38 @@
+Data Security Policy
+
+Access Control
+All employee access to internal systems follows the principle of least
+privilege: employees are granted only the permissions necessary for
+their role. Access requests beyond default role permissions require
+manager approval and are logged. Access reviews are conducted
+quarterly, and any unused permissions are automatically revoked after
+90 days of inactivity.
+
+Password Requirements
+All accounts must use passwords of at least 12 characters, combining
+uppercase, lowercase, numbers, and symbols. Multi-factor authentication
+is mandatory for all systems containing customer data. Passwords must
+be rotated every 180 days and cannot repeat any of the previous five
+passwords used.
+
+Data Classification
+Data is classified into four tiers: Public, Internal, Confidential, and
+Restricted. Restricted data, including customer payment information
+and government IDs, must be encrypted both at rest and in transit, and
+access is limited to a named list of approved personnel. Confidential
+data must be encrypted at rest but may be shared internally without
+additional approval.
+
+Incident Response
+Any suspected security incident must be reported to the security team
+within one hour of discovery. The security team will triage the
+incident within four hours and determine whether customer
+notification is required under applicable regulations. A full incident
+report, including root cause and remediation steps, must be completed
+within five business days of resolution.
+
+Third-Party Vendors
+All third-party vendors with access to company data must sign a data
+processing agreement and undergo a security review before onboarding.
+Vendor access is reviewed annually, and any vendor found non-compliant
+with this policy has access revoked within 24 hours.

@@ -1,0 +1,41 @@
+TaskFlow API Documentation
+
+Overview
+The TaskFlow API allows developers to create, update, and manage tasks
+programmatically. All requests require an API key passed in the
+Authorization header as a Bearer token. The base URL for all endpoints
+is https://api.taskflow.example/v1.
+
+Authentication
+API keys can be generated from the developer dashboard under Settings >
+API Keys. Each key is scoped to a single workspace and can be revoked
+at any time. Requests without a valid key return a 401 Unauthorized
+response. Rate limits are set at 100 requests per minute per key; 
+exceeding this returns a 429 status code with a Retry-After header.
+
+Creating a Task
+Send a POST request to /tasks with a JSON body containing title
+(required), description (optional), due_date in ISO 8601 format
+(optional), and priority as one of low, medium, or high (defaults to
+medium if omitted). A successful request returns a 201 status with the
+created task object, including a generated task_id.
+
+Updating a Task
+Send a PATCH request to /tasks/{task_id} with any subset of fields to
+update. Only the fields included in the request body are changed;
+omitted fields retain their existing values. Updating a task's status
+to "completed" automatically sets a completed_at timestamp.
+
+Webhooks
+TaskFlow can notify external systems when tasks are created, updated,
+or completed. Webhooks are configured under Settings > Webhooks by
+providing a target URL. Each webhook payload includes an event type,
+the affected task object, and a timestamp. Failed webhook deliveries
+are retried up to three times with exponential backoff before being
+marked as failed.
+
+Error Handling
+All error responses follow a consistent format: a status code, an
+error code string, and a human-readable message. Common error codes
+include invalid_request (400), unauthorized (401), not_found (404),
+and rate_limited (429).
